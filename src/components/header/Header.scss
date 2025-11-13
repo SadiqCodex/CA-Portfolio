@@ -12,13 +12,13 @@
 }
 
 .nav-toolbar {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.5rem;
+  // padding: 0 1.5rem;
   height: 70px;
 }
 
@@ -62,7 +62,7 @@
     }
 
     &:hover {
-      color: #f4c542 !important;
+      color: white !important;
     }
   }
 }
@@ -73,7 +73,7 @@
   color: #0f172a !important;
   border-radius: 30px !important;
   text-transform: none !important;
-  padding: 8px 20px !important;
+  padding: 8px 10px !important;
 
   &:hover {
     background-color: #ffda68 !important;
@@ -145,5 +145,20 @@
 
   .nav-links {
     display: none;
+  }
+}
+
+@media (max-width: 1190px) {
+  .nav-logo {
+    font-size: 1rem !important;
+    width: auto;
+  }
+
+  .nav-links button {
+    font-size: 0.9rem !important;
+  }
+
+  .consult-btn {
+    padding: 2px 12px !important;
   }
 }

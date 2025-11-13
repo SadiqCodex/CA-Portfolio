@@ -1,49 +1,212 @@
+/* ==================================================
+   🌙 FOOTER STYLES — CA Adil Mohammad Silawat
+   ================================================== */
+
 .footer {
-  background: #0a0f1a;
+  background: #0f172a;
   color: #e2e8f0;
-  padding: 40px 0 20px;
+  padding: 70px 0 30px;
+  position: relative;
+  overflow: hidden;
+
+  /* Decorative gradient overlay */
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center,
+        rgba(244, 197, 66, 0.08) 0%,
+        transparent 70%);
+    z-index: 0;
+  }
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-bottom: 30px;
+/* =========================
+   🧭 GRID & SECTIONS
+   ========================= */
+.footer-grid {
+  margin-bottom: 40px !important;
 }
 
-.footer-section h3 {
-  color: #f4c542;
-  margin-bottom: 15px;
+.footer-section {
+  h6 {
+    color: #f4c542;
+    margin-bottom: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      color: #94a3b8;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #f4c542;
+        transform: translateX(4px);
+        cursor: pointer;
+      }
+    }
+  }
 }
 
-.footer-section h4 {
-  color: #cbd5e1;
-  margin-bottom: 15px;
+/* =========================
+   🏢 BRAND LOGO & TEXT
+   ========================= */
+.footer-logo {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+
+  .highlight {
+    color: #f4c542;
+  }
 }
 
-.footer-section ul {
-  list-style: none;
-}
-
-.footer-section ul li {
-  margin-bottom: 8px;
+.footer-text {
   color: #94a3b8;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
-.footer-section p {
+/* =========================
+   🔗 SOCIAL ICONS
+   ========================= */
+.footer-socials {
+  display: flex;
+  gap: 10px;
+
+  .social-btn {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #f4c542;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 8px;
+
+    &:hover {
+      background-color: #f4c542;
+      color: #0f172a;
+      transform: scale(1.15);
+      border-color: transparent;
+    }
+  }
+}
+
+/* =========================
+   📞 CONTACT INFO
+   ========================= */
+.contact-section {
+  .footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+
+    svg {
+      color: #f4c542;
+    }
+
+    &:hover {
+      color: #f4c542;
+      transform: translateX(5px);
+    }
+  }
+}
+
+/* =========================
+   📘 EXTRA INFO SECTION
+   ========================= */
+.footer-extra {
+  margin-top: 25px;
   color: #94a3b8;
-  margin-bottom: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+
+  span {
+    color: #f4c542;
+  }
+}
+
+/* =========================
+   📏 DIVIDER & BOTTOM TEXT
+   ========================= */
+.footer-divider {
+  background-color: #334155 !important;
+  margin: 25px 0;
 }
 
 .footer-bottom {
-  border-top: 1px solid #334155;
-  padding-top: 20px;
   text-align: center;
   color: #64748b;
+  font-size: 0.9rem;
+
+  a {
+    color: #f4c542;
+    text-decoration: none;
+    margin-left: 6px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ffe480;
+    }
+  }
+}
+
+/* =========================
+   📱 RESPONSIVE DESIGN
+   ========================= */
+@media (max-width: 992px) {
+  .footer {
+    padding: 50px 0 25px;
+  }
+
+  .footer-section h6 {
+    font-size: 1rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+
+  .footer-contact {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 0 20px;
+  }
+
+  .footer-section {
+    margin-bottom: 25px;
+  }
+
+  .footer-socials {
+    justify-content: flex-start;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
 }

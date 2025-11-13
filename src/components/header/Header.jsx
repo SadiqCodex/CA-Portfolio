@@ -25,6 +25,9 @@ import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 
+// Framer Motion
+import { motion, AnimatePresence } from "framer-motion";
+
 import "./Header.scss";
 
 const Header = () => {
@@ -43,101 +46,151 @@ const Header = () => {
   ];
 
   return (
-    <AppBar position="sticky" color="default" className="navbar">
-      <Toolbar className="nav-toolbar">
-        {/* Logo */}
-        <Typography variant="h6" className="nav-logo">
-          <span className="highlight">CA</span> Adil Mohammad Silawat
-        </Typography>
-
-        {/* Desktop Menu */}
-        <Box className="nav-links" sx={{ display: { xs: "none", md: "flex" } }}>
-          {menuItems.map((item) => (
-            <Button
-              key={item.label}
-              href={item.link}
-              startIcon={item.icon}
-              sx={{
-                color: "#e2e8f0",
-                fontWeight: 500,
-                textTransform: "none",
-              }}
-            >
-              {item.label}
-            </Button>
-          ))}
-          <Button variant="contained" className="consult-btn">
-            Book Consultation
-          </Button>
-        </Box>
-
-        {/* Mobile Menu Icon */}
-        <IconButton
-          sx={{ display: { xs: "block", md: "none" }, color: "#f4c542" }}
-          onClick={toggleDrawer(true)}
-        >
-          <MenuIcon />
-        </IconButton>
-
-        {/* Drawer for Mobile */}
-        <Drawer
-          anchor="right"
-          open={isMenuOpen}
-          onClose={toggleDrawer(false)}
-          PaperProps={{
-            sx: { width: "240px", backgroundColor: "#0f172a" },
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              p: 2,
-            }}
+    <motion.div
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <AppBar position="sticky" color="default" className="navbar">
+        <Toolbar className="nav-toolbar">
+          {/* Logo */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            <Typography variant="h6" sx={{ color: "#f4c542" }}>
-              Menu
+            <Typography variant="h6" className="nav-logo">
+              <span className="highlight">CA</span> Adil Mohammad Silawat
             </Typography>
-            <IconButton onClick={toggleDrawer(false)} sx={{ color: "#f4c542" }}>
-              <CloseIcon />
-            </IconButton>
-          </Box>
+          </motion.div>
 
-          <List>
+          {/* Desktop Menu */}
+          <Box className="nav-links" sx={{ display: { xs: "none", md: "flex" } }}>
             {menuItems.map((item) => (
-              <ListItem key={item.label} disablePadding>
-                <ListItemButton
-                  component="a"
+              <motion.div
+                key={item.label}
+                whileHover={{ scale: 1.08, color: "#f4c542" }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 200 }}
+              >
+                <Button
                   href={item.link}
-                  onClick={toggleDrawer(false)}
+                  startIcon={item.icon}
+                  sx={{
+                    color: "#e2e8f0",
+                    fontWeight: 500,
+                    textTransform: "none",
+                    mx: 1,
+                  }}
                 >
-                  <ListItemIcon sx={{ color: "#f4c542" }}>
-                    {item.icon}
-                  </ListItemIcon>
-                  <ListItemText primary={item.label} />
-                </ListItemButton>
-              </ListItem>
+                  {item.label}
+                </Button>
+              </motion.div>
             ))}
-          </List>
 
-          <Box sx={{ p: 2 }}>
-            <Button fullWidth variant="contained" className="consult-btn">
-              Book Consultation
-            </Button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button variant="contained" className="consult-btn">
+                Book Consultation
+              </Button>
+            </motion.div>
           </Box>
 
-          <Box className="contact-info">
-            <div>
-              <CallIcon fontSize="small" /> <span>+91 98765 43210</span>
-            </div>
-            <div>
-              <EmailIcon fontSize="small" /> <span>contact@caadil.com</span>
-            </div>
-          </Box>
-        </Drawer>
-      </Toolbar>
-    </AppBar>
+          {/* Mobile Menu Icon */}
+          <IconButton
+            sx={{ display: { xs: "block", md: "none" }, color: "#f4c542" }}
+            onClick={toggleDrawer(true)}
+          >
+            <MenuIcon />
+          </IconButton>
+
+          {/* Drawer for Mobile */}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <Drawer
+                anchor="right"
+                open={isMenuOpen}
+                onClose={toggleDrawer(false)}
+                PaperProps={{
+                  sx: { width: "240px", backgroundColor: "#0f172a" },
+                }}
+              >
+                <motion.div
+                  initial={{ x: 300, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: 300, opacity: 0 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      p: 2,
+                    }}
+                  >
+                    <Typography variant="h6" sx={{ color: "#f4c542" }}>
+                      CA Adil Mohammad Silawat
+                    </Typography>
+                    <IconButton
+                      onClick={toggleDrawer(false)}
+                      sx={{ color: "#f4c542" }}
+                    >
+                      <CloseIcon />
+                    </IconButton>
+                  </Box>
+
+                  <List>
+                    {menuItems.map((item, index) => (
+                      <motion.div
+                        key={item.label}
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <ListItem disablePadding>
+                          <ListItemButton
+                            component="a"
+                            href={item.link}
+                            onClick={toggleDrawer(false)}
+                          >
+                            <ListItemIcon sx={{ color: "#f4c542" }}>
+                              {item.icon}
+                            </ListItemIcon>
+                            <ListItemText primary={item.label} />
+                          </ListItemButton>
+                        </ListItem>
+                      </motion.div>
+                    ))}
+                  </List>
+
+                  <Box sx={{ p: 2 }}>
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                      <Button fullWidth variant="contained" className="consult-btn">
+                        Book Consultation
+                      </Button>
+                    </motion.div>
+                  </Box>
+
+                  <motion.div
+                    className="contact-info"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    <div>
+                      <CallIcon fontSize="small" /> <span>+91 98765 43210</span>
+                    </div>
+                    <div>
+                      <EmailIcon fontSize="small" />{" "}
+                      <span>contact@caadil.com</span>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </Drawer>
+            )}
+          </AnimatePresence>
+        </Toolbar>
+      </AppBar>
+    </motion.div>
   );
 };
 
