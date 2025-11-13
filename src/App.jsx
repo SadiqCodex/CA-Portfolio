@@ -1,13 +1,13 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Footer from './components/Footer';
-import './App.css';
 
+import './App.css';
+import Header from './components/header/header';
+import Home from './modules/home/Home';
+import Footer from './components/footer/Footer';
 function App() {
   return (
     <>
-      <Navbar />
-      <Hero />
+      <Header />
+      <Home />
       <Footer />
     </>
   );
