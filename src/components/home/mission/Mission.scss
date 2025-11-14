@@ -1,0 +1,56 @@
+.mission-section {
+  position: relative;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding: 100px 0;
+  color: #f1f5f9;
+  text-align: center;
+  
+  .mission-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.8);
+    z-index: 1;
+  }
+  
+  .mission-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 25px;
+    
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      background: linear-gradient(90deg, #3b82f6, #22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      color: #e2e8f0;
+      
+      strong {
+        color: #93c5fd;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 70px 0;
+    
+    .mission-content {
+      h2 {
+        font-size: 2rem;
+      }
+      
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

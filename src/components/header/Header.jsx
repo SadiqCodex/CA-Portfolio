@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -38,11 +39,11 @@ const Header = () => {
   };
 
   const menuItems = [
-    { label: "Home", link: "#home", icon: <HomeIcon /> },
-    { label: "About", link: "#about", icon: <InfoIcon /> },
-    { label: "Services", link: "#services", icon: <MiscellaneousServicesIcon /> },
+    { label: "Home", link: "/", icon: <HomeIcon /> },
+    { label: "About", link: "/about", icon: <InfoIcon /> },
+    { label: "Services", link: "/services", icon: <MiscellaneousServicesIcon /> },
     { label: "Resources", link: "#resources", icon: <LibraryBooksIcon /> },
-    { label: "Contact", link: "#contact", icon: <ContactMailIcon /> },
+    { label: "Contact", link: "/contact", icon: <ContactMailIcon /> },
   ];
 
   return (
@@ -53,17 +54,15 @@ const Header = () => {
     >
       <AppBar position="sticky" color="default" className="navbar">
         <Toolbar className="nav-toolbar">
-          {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <Typography variant="h6" className="nav-logo">
+            <Typography variant="h6" className="nav-logo" component={Link} to="/">
               <span className="highlight">CA</span> Adil Mohammad Silawat
             </Typography>
           </motion.div>
 
-          {/* Desktop Menu */}
           <Box className="nav-links" sx={{ display: { xs: "none", md: "flex" } }}>
             {menuItems.map((item) => (
               <motion.div
@@ -73,7 +72,9 @@ const Header = () => {
                 transition={{ type: "spring", stiffness: 200 }}
               >
                 <Button
-                  href={item.link}
+                  component={item.link.startsWith('#') ? 'a' : Link}
+                  to={item.link.startsWith('#') ? undefined : item.link}
+                  href={item.link.startsWith('#') ? item.link : undefined}
                   startIcon={item.icon}
                   sx={{
                     color: "#e2e8f0",
@@ -94,7 +95,6 @@ const Header = () => {
             </motion.div>
           </Box>
 
-          {/* Mobile Menu Icon */}
           <IconButton
             sx={{ display: { xs: "block", md: "none" }, color: "#f4c542" }}
             onClick={toggleDrawer(true)}
@@ -102,7 +102,6 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
 
-          {/* Drawer for Mobile */}
           <AnimatePresence>
             {isMenuOpen && (
               <Drawer
@@ -148,8 +147,9 @@ const Header = () => {
                       >
                         <ListItem disablePadding>
                           <ListItemButton
-                            component="a"
-                            href={item.link}
+                            component={item.link.startsWith('#') ? 'a' : Link}
+                            to={item.link.startsWith('#') ? undefined : item.link}
+                            href={item.link.startsWith('#') ? item.link : undefined}
                             onClick={toggleDrawer(false)}
                           >
                             <ListItemIcon sx={{ color: "#f4c542" }}>
