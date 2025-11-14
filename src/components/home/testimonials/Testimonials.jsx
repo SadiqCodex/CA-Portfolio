@@ -1,4 +1,8 @@
-import './Testimonials.scss';
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "./Testimonials.scss";
 
 const Testimonials = () => {
   const testimonials = [
@@ -24,22 +28,53 @@ const Testimonials = () => {
     }
   ];
 
+  // 2X array for seamless infinite scrolling
+  const loopTestimonials = [...testimonials, ...testimonials];
+
+  useEffect(() => {
+    AOS.init({ duration: 900, once: true });
+  }, []);
+
   return (
     <section className="testimonials-section">
       <div className="testimonials-container">
-        <h2>What Our Clients Say</h2>
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="testimonial-card">
-              <div className="quote-icon">"</div>
-              <p className="testimonial-text">{testimonial.text}</p>
-              <div className="client-info">
-                <div className="client-initial">{testimonial.client}</div>
-                <span className="client-company">{testimonial.company}</span>
-              </div>
-            </div>
-          ))}
+
+        <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          What Our Clients Say
+        </motion.h2>
+
+        <div className="scroll-wrapper">
+          <motion.div
+            className="scroll-track"
+            animate={{ x: ["0%", "-100%"] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          >
+            {loopTestimonials.map((t, index) => (
+              <motion.div
+                key={index}
+                className="testimonial-card"
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}
+                whileHover={{ scale: 1.04 }}
+                transition={{ type: "spring", stiffness: 180 }}
+              >
+                <div className="quote-icon">"</div>
+
+                <p className="testimonial-text">{t.text}</p>
+
+                <div className="client-info">
+                  <div className="client-initial">{t.client}</div>
+                  <span className="client-company">{t.company}</span>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
+
       </div>
     </section>
   );

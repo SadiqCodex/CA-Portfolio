@@ -1,7 +1,7 @@
 .about-section {
   padding: 80px 0;
   background: #f8fafc;
-  
+
   .about-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -11,7 +11,7 @@
     gap: 60px;
     align-items: center;
   }
-  
+
   .about-content {
     h2 {
       font-size: 2.2rem;
@@ -19,7 +19,7 @@
       margin-bottom: 25px;
       font-weight: 700;
     }
-    
+
     p {
       color: #475569;
       font-size: 1.1rem;
@@ -27,11 +27,11 @@
       margin-bottom: 20px;
     }
   }
-  
+
   .about-visual {
     display: flex;
     justify-content: center;
-    
+
     .visual-element {
       width: 200px;
       height: 200px;
@@ -41,24 +41,38 @@
       align-items: center;
       justify-content: center;
       animation: float 3s ease-in-out infinite;
-      
+
       .floating-icon {
         font-size: 4rem;
         animation: pulse 2s ease-in-out infinite;
       }
     }
   }
-  
+
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
-  
+
   @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
   }
-  
+
   @media (max-width: 768px) {
     .about-container {
       grid-template-columns: 1fr;

@@ -1,4 +1,8 @@
-import './Services.scss';
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "./Services.scss";
 
 const Services = () => {
   const services = [
@@ -34,23 +38,53 @@ const Services = () => {
     }
   ];
 
+  useEffect(() => {
+    AOS.init({ duration: 900, once: true });
+  }, []);
+
   return (
     <section className="services-section">
       <div className="services-container">
-        <div className="section-header">
-          <h2>We Deliver <span className="highlight">Value-Based Services</span></h2>
+
+        {/* HEADER */}
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <h2>
+            We Deliver <span className="highlight">Value-Based Services</span>
+          </h2>
           <p>Empowering businesses with expert financial guidance and comprehensive solutions</p>
-        </div>
-        
+        </motion.div>
+
+        {/* GRID */}
         <div className="services-grid">
           {services.map((service, index) => (
-            <div key={index} className="service-card">
-              <div className="service-icon">{service.icon}</div>
+            <motion.div
+              key={index}
+              className="service-card"
+              data-aos="fade-up"
+              data-aos-delay={index * 120}
+              whileHover={{ scale: 1.04 }}
+              transition={{ type: "spring", stiffness: 150 }}
+            >
+              <motion.div
+                className="service-icon"
+                initial={{ rotate: -10, opacity: 0 }}
+                whileInView={{ rotate: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                {service.icon}
+              </motion.div>
+
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
