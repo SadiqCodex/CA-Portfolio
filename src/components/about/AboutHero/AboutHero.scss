@@ -1,23 +1,70 @@
 .about-hero {
-  background: linear-gradient(135deg, #11131f 0%, #1e2130 100%);
+  background: linear-gradient(135deg, #0d0f1a 0%, #1a1d2b 100%);
   color: #fff;
-  padding: 100px 0;
+  padding: 120px 0;
   text-align: center;
 
-  h1 {
-    font-size: 3rem;
+  .about-title {
+    font-size: 3.2rem;
+    font-weight: 700;
     margin-bottom: 20px;
-    background: linear-gradient(90deg, #00ffe0, #f4c542);
+
+    /* Gradient Text */
+    background: linear-gradient(90deg, #00ffe0, #f4c542, #60a5fa);
+    background-size: 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 700;
+    animation: titleGradient 6s ease infinite;
   }
 
-  p {
-    font-size: 1.3rem;
-    max-width: 800px;
+  @keyframes titleGradient {
+    0% {
+      background-position: 0%;
+    }
+
+    50% {
+      background-position: 100%;
+    }
+
+    100% {
+      background-position: 0%;
+    }
+  }
+
+  .about-desc {
+    font-size: 1.25rem !important;
+    max-width: 780px;
     margin: 0 auto;
     line-height: 1.6;
-    color: #cbd5e1;
+    color: #c8d1e3;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 90px 0;
+
+    .about-title {
+      font-size: 2.4rem;
+    }
+
+    .about-desc {
+      font-size: 1.1rem !important;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 70px 0;
+
+    .about-title {
+      font-size: 2rem;
+    }
+
+    .about-desc {
+      font-size: 1rem !important;
+    }
   }
 }

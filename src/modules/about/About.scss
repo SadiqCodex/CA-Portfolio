@@ -1,15 +1,52 @@
-// .about-page {
-//   width: 100%;
-//   overflow-x: hidden;
-//   background: #0f111a;
-//   color: #e2e8f0;
-//   padding-top: 70px; // If fixed header exists
+.about-page {
+    width: 100%;
+    overflow: hidden;
+    background: #0d0f1a;
 
-//   section {
-//     width: 100%;
-//   }
+    /* Default padding between sections */
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
-//   @media (max-width: 768px) {
-//     font-size: 14px;
-//   }
-// }
+    /* Space between all sections */
+    >section {
+        margin-bottom: 1px;
+    }
+}
+
+/* ---------------- RESPONSIVE DESIGN ---------------- */
+
+@media (max-width: 1024px) {
+    .about-page {
+        >section {
+            margin-bottom: 70px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .about-page {
+        >section {
+            margin-bottom: 60px;
+        }
+
+        section {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .about-page {
+        >section {
+            margin-bottom: 50px;
+        }
+
+        section {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+    }
+}

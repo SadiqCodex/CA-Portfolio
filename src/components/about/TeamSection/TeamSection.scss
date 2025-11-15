@@ -1,66 +1,102 @@
 .team-section {
   padding: 100px 0;
-  background: #11131f;
+  background: linear-gradient(135deg, #0f111a, #1b1f2d);
 
   h2 {
     text-align: center;
-    font-size: 2.5rem;
-    color: #00ffe0;
-    margin-bottom: 60px;
+    font-size: 2.8rem;
     font-weight: 700;
+    margin-bottom: 60px;
+    background: linear-gradient(90deg, #00ffe0, #f4c542);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
   }
 
   .team-card {
-    background: #1e2130;
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
     padding: 40px;
-    box-shadow: 0 8px 30px rgba(0, 255, 224, 0.3);
-    border: 1px solid #2c2f42;
     text-align: center;
-    transition: 0.3s;
+    border: 1px solid rgba(0, 255, 224, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 255, 224, 0.12);
+    backdrop-filter: blur(12px);
+    transition: 0.3s ease-out;
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 35px rgba(0, 255, 224, 0.5);
+      box-shadow: 0 14px 35px rgba(0, 255, 224, 0.35);
+      background: rgba(0, 255, 224, 0.1);
     }
 
     .photo-placeholder {
       width: 150px;
       height: 150px;
-      background: linear-gradient(135deg, #00ffe0, #f4c542);
       border-radius: 50%;
-      margin: 0 auto 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #00ffe0, #f4c542);
       border: 3px solid #00ffe0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: #111;
+      font-size: 4rem;
+
+      svg {
+        font-size: 4rem;
+      }
+    }
+
+    h3 {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
     }
 
     .designation {
-      color: #f4c542;
       font-weight: 600;
-      margin: 10px 0;
+      color: #f4c542;
+      margin-bottom: 10px;
     }
 
     .specialization {
-      color: #a0aec0;
+      color: #cbd5e1;
+      font-size: 1.05rem;
       margin-bottom: 25px;
+      line-height: 1.5;
     }
 
     .signature-placeholder {
       border: 2px dashed #00ffe0;
-      padding: 10px;
-      border-radius: 8px;
-      color: #f4c542;
+      padding: 12px;
+      border-radius: 10px;
       font-style: italic;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #f4c542;
+
+      svg {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-section {
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    .team-card {
+      padding: 30px;
     }
   }
 }
