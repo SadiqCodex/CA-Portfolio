@@ -1,0 +1,134 @@
+.contact-info {
+    padding: 90px 0;
+    background: linear-gradient(180deg, #f4f7fb 0%, #eef2f6 100%);
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 20px;
+    }
+
+    /* Glass Card */
+    .contact-details {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(12px);
+        padding: 45px 40px;
+        border-radius: 22px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        max-width: 600px;
+        margin: auto;
+        transition: 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0a1f44;
+            margin-bottom: 35px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 20px;
+            padding: 18px 0;
+            border-bottom: 1px solid #dbe2ec;
+            transition: 0.25s ease;
+
+            &:hover {
+                background: rgba(240, 244, 250, 0.6);
+                border-radius: 10px;
+                padding-left: 10px;
+            }
+
+            .icon {
+                font-size: 36px;
+                min-width: 40px;
+            }
+
+            h4 {
+                font-size: 1.25rem;
+                font-weight: 600;
+                color: #113b70;
+                margin-bottom: 6px;
+            }
+
+            p {
+                font-size: 1.05rem;
+                color: #4b5563;
+                line-height: 1.5;
+            }
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+/* ---------- Tablet Responsive ---------- */
+@media (max-width: 768px) {
+    .contact-info {
+        padding: 70px 0;
+
+        .contact-details {
+            padding: 35px 30px;
+
+            h2 {
+                font-size: 1.9rem;
+                margin-bottom: 30px;
+            }
+
+            .contact-item {
+                gap: 15px;
+
+                .icon {
+                    font-size: 30px;
+                }
+
+                h4 {
+                    font-size: 1.15rem;
+                }
+
+                p {
+                    font-size: 0.98rem;
+                }
+            }
+        }
+    }
+}
+
+/* ---------- Mobile Responsive ---------- */
+@media (max-width: 480px) {
+    .contact-info {
+        padding: 55px 0;
+
+        .contact-details {
+            padding: 28px 22px;
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .contact-item {
+                gap: 12px;
+
+                .icon {
+                    font-size: 26px;
+                }
+
+                h4 {
+                    font-size: 1.05rem;
+                }
+
+                p {
+                    font-size: 0.92rem;
+                }
+            }
+        }
+    }
+}
