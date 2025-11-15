@@ -1,0 +1,23 @@
+.about-hero {
+  background: linear-gradient(135deg, #11131f 0%, #1e2130 100%);
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #00ffe0, #f4c542);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #cbd5e1;
+  }
+}
