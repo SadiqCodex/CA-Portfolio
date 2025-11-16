@@ -189,10 +189,10 @@ const Footer = () => {
         {/* Bottom Section */}
         <Box className="footer-bottom">
           <Typography variant="body2">
-            © {new Date().getFullYear()} CA Adil Mohammad Silawat. All rights reserved.
+            © {new Date().getFullYear()} CA Yusuf Kareem Al-Rasheed. All rights reserved.
           </Typography>
           <Typography variant="body2" className="footer-credit">
-            Designed & Developed with ❤️ by <span onClick={() => window.open('https://www.ilmcore.com', '_blank')} style={{ cursor: 'pointer' }}>ILMCORE TECH</span>
+            Designed & Developed with ❤️ by <span onClick={() => window.open('https://www.ilmcore.com', '_blank')} style={{ cursor: 'pointer' }}>ILMCORE TECHNOLOGY</span>
           </Typography>
         </Box>
       </div>

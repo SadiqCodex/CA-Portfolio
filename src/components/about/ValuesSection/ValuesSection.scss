@@ -2,111 +2,142 @@
   padding: 90px 0;
   background: linear-gradient(135deg, #11131f, #1e2130);
   text-align: center;
+  color: #e6eef8;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
   h2 {
     font-size: 2.7rem;
     font-weight: 700;
+    margin-bottom: 12px;
     background: linear-gradient(90deg, #00ffe0, #f4c542);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 15px;
+    letter-spacing: -0.2px;
   }
 
   .subtitle {
-    font-size: 1.25rem;
+    font-size: 1.12rem;
     color: #cbd5e1;
     max-width: 780px;
-    margin: 0 auto 60px;
+    margin: 0 auto 42px;
     line-height: 1.6;
   }
 
   .values-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // fixed 3 per row
-    gap: 35px;
-    margin-top: 20px;
-    justify-items: stretch; // make cards take full column width
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    align-items: stretch;
   }
 
   .value-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(14px); // same as awards
-    border-radius: 16px;
-    padding: 25px 20px;
-    border: 1px solid rgba(0, 255, 224, 0.15);
-    box-shadow: 0 8px 20px rgba(0, 255, 224, 0.08);
-    transition: all 0.3s ease;
-    min-height: 160px; // same vertical height as awards
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    padding: 26px 18px;
+    border: 1px solid rgba(0, 255, 224, 0.12);
+    box-shadow: 0 8px 20px rgba(0, 255, 224, 0.06);
+    transition: all 0.32s ease;
+    min-height: 180px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%; // full column width
+    align-items: center;
+    text-align: center;
 
     &:hover {
-      background: rgba(0, 255, 224, 0.12);
-      border-color: rgba(0, 255, 224, 0.3);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0, 255, 224, 0.25);
+      background: rgba(0, 255, 224, 0.08);
+      border-color: rgba(0, 255, 224, 0.28);
+      box-shadow: 0 18px 38px rgba(0, 255, 224, 0.14);
+      transform: translateY(-6px);
     }
 
     .icon-box {
-      width: 80px;
-      height: 80px;
-      border-radius: 14px;
-      margin: 0 auto 20px;
-      background: linear-gradient(135deg, #00ffe0, #f4c542);
+      width: 88px;
+      height: 88px;
+      border-radius: 12px;
+      margin-bottom: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.2rem;
-      color: #111;
+      background: linear-gradient(135deg, #00ffe0, #f4c542);
+      color: #0b1220;
+      box-shadow: 0 6px 18px rgba(0, 255, 224, 0.08);
 
       svg {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
       }
     }
 
     h3 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
       color: #ffffff;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     p {
       color: #d1d5db;
-      font-size: 1.05rem;
-      line-height: 1.55;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
+      font-size: 1rem;
+      line-height: 1.5;
+      max-width: 280px;
     }
   }
-}
 
-/* Responsive */
-@media (max-width: 992px) {
-  .values-grid {
-    grid-template-columns: repeat(2, 1fr); // medium screens: 2 per row
+  /* Responsive */
+  @media (max-width: 992px) {
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .value-card {
+      min-height: 160px;
+
+      .icon-box {
+        width: 76px;
+        height: 76px;
+      }
+
+      p {
+        max-width: 300px;
+      }
+    }
   }
-}
 
-@media (max-width: 768px) {
-  .values-section {
+  @media (max-width: 600px) {
+    padding: 60px 0;
+
     h2 {
       font-size: 2.2rem;
     }
 
     .subtitle {
-      font-size: 1.1rem;
-      margin-bottom: 40px;
+      margin-bottom: 28px;
     }
 
     .values-grid {
-      grid-template-columns: 1fr; // mobile: 1 per row
-      gap: 25px;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .value-card {
+      padding: 20px;
+
+      .icon-box {
+        width: 68px;
+        height: 68px;
+      }
+
+      p {
+        max-width: 100%;
+      }
     }
   }
 }

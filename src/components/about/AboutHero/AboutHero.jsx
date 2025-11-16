@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Container, Typography } from "@mui/material";
 import { useEffect } from "react";
 import AOS from "aos";
-import Cover from "../../../assets/images/cover.png";   // Correct Import
+import Cover from "../../../assets/images/cover.png";
 import "aos/dist/aos.css";
 import "./AboutHero.scss";
 
@@ -15,78 +15,53 @@ const AboutHero = () => {
     <section
       className="about-hero"
       style={{
-        backgroundImage: `url(${Cover})`,   // ✅ Using imported image here
+        backgroundImage: `url(${Cover})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        padding: "150px 0",
         position: "relative",
       }}
     >
       {/* Dark Overlay */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          background: "rgba(0,0,0,0.55)",
-          zIndex: 1,
-        }}
-      ></div>
+      <div className="hero-overlay"></div>
 
-      <Container
-        maxWidth="md"
-        className="text-center"
-        style={{ position: "relative", zIndex: 2 }}
-      >
-        {/* Firm Short Name */}
+      <Container maxWidth="md" className="text-center hero-content">
+        {/* Firm Name */}
         <motion.div
-          initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -60 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <Typography
-            variant="h3"
-            style={{
-              color: "#fff",
-              fontWeight: 700,
-              letterSpacing: "1px",
-            }}
-          >
+          <Typography variant="h3" className="firm-title">
             Saif & Co.
           </Typography>
 
-          {/* Premium Underline */}
-          <div
-            style={{
-              width: "70px",
-              height: "4px",
-              background: "#7ed957",
-              margin: "12px auto 0 auto",
-              borderRadius: "4px",
-            }}
-          ></div>
+          <motion.div
+            className="title-underline"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+          ></motion.div>
         </motion.div>
 
         {/* Tagline */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 1 }}
         >
-          <Typography
-            variant="h6"
-            style={{
-              color: "rgba(255,255,255,0.9)",
-              marginTop: "16px",
-              lineHeight: "1.6",
-            }}
-          >
+          <Typography variant="h6" className="firm-subtitle" data-aos="fade-up">
             Chartered Accountant Firm | Dubai, UAE
           </Typography>
         </motion.div>
+
+        {/* Floating Line Animation */}
+        <motion.div
+          className="floating-line"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 1.1, ease: "easeOut" }}
+        />
       </Container>
     </section>
   );

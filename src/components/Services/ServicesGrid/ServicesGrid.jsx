@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import "./ServicesGrid.scss";
 
 const ServicesGrid = () => {
+  useEffect(() => {
+    AOS.init({ duration: 900, once: true, offset: 60 });
+  }, []);
+
   const services = [
     {
       icon: "💰",
@@ -50,15 +58,44 @@ const ServicesGrid = () => {
   return (
     <section className="services-grid-section">
       <div className="container">
+
+        <motion.h2
+          className="services-heading"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          data-aos="fade-up"
+        >
+          Our Professional Services
+        </motion.h2>
+
         <div className="services-grid">
           {services.map((service, index) => (
-            <div key={index} className="service-card">
-              <div className="service-icon">{service.icon}</div>
+            <motion.div
+              key={index}
+              className="service-card"
+              data-aos="fade-up"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: index * 0.15 }}
+              whileHover={{ scale: 1.04 }}
+            >
+              <motion.div className="service-icon" whileHover={{ scale: 1.2 }}>
+                {service.icon}
+              </motion.div>
+
               <h3>{service.title}</h3>
               <p className="service-subtitle">{service.subtitle}</p>
               <p className="service-description">{service.description}</p>
-              <button className="service-btn">Learn More</button>
-            </div>
+
+              <motion.button
+                className="service-btn"
+                whileHover={{ scale: 1.07 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Learn More
+              </motion.button>
+            </motion.div>
           ))}
         </div>
       </div>
