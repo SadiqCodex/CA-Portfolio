@@ -1,0 +1,106 @@
+.about-overview-section {
+  background: linear-gradient(135deg, #0c0f14, #1b1f2d);
+  padding: 100px 0; // thoda extra vertical padding
+  color: #dce3ea;
+  text-align: center;
+
+  .about-overview-container {
+    max-width: 1500px; // aur bada grid container
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; // extra spacing between title/cards
+  }
+
+  .overview-title {
+    font-size: 2.6rem; // slightly bigger title
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #00ffe0, #f4c542);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+  }
+
+  .overview-line {
+    width: 100px; // thoda lamba line
+    height: 5px;  // thoda mota line
+    background: linear-gradient(90deg, #00ffe0, #f4c542);
+    border-radius: 6px;
+    margin-bottom: 50px;
+  }
+
+  .overview-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px; // cards ke beech zyada space
+    width: 100%;
+    justify-items: stretch;
+  }
+
+  .overview-card {
+    background: rgba(255, 255, 255, 0.06); // thoda zyada opacity for emphasis
+    border-radius: 18px;
+    padding: 40px 35px; // aur zyada padding
+    border: 1px solid rgba(0, 255, 224, 0.2);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 10px 25px rgba(0, 255, 224, 0.1);
+    min-height: 380px; // aur bada card height
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    transition: all 0.3s ease;
+
+    .overview-text {
+      color: #dce3ea;
+      font-size: 1.1rem; // slightly bigger text
+      line-height: 1.7;
+      text-align: justify;
+      margin-bottom: 15px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .overview-highlight {
+      color: #eaeff5;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 15px;
+      text-align: justify;
+    }
+
+    &:hover {
+      background: rgba(0, 255, 224, 0.14);
+      border-color: rgba(0, 255, 224, 0.35);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 32px rgba(0, 255, 224, 0.3);
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .overview-cards {
+    grid-template-columns: 1fr; // stack vertically
+  }
+  .overview-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .overview-title {
+    font-size: 2rem;
+  }
+  .overview-card {
+    min-height: auto;
+    padding: 30px 25px;
+  }
+  .overview-text, .overview-highlight {
+    font-size: 1rem;
+  }
+}

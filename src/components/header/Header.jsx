@@ -78,15 +78,20 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <Typography
+            {/* <Typography
               variant="h6"
               className="nav-logo"
               component={Link}
               to="/"
               data-aos="fade-right"
             >
-              <span className="highlight">CA</span> Adil Mohammad Silawat
-            </Typography>
+              <span className="highlight">CA</span> Yusuf Kareem Al-Rasheed
+            </Typography> */}
+            <Typography variant="h6" className="nav-logo" component={Link}
+              to="/"
+              data-aos="fade-right">
+                <span className="highlight">CA</span> Yusuf Kareem Al-Rasheed
+              </Typography>
           </motion.div>
 
           {/* Desktop Links */}

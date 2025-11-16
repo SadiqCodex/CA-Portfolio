@@ -102,7 +102,7 @@ const Footer = () => {
               className="footer-section"
             >
               <Typography variant="h6" className="footer-logo">
-                <span className="highlight">CA</span> Adil Mohammad Silawat
+                <span className="highlight">CA</span> Yusuf Kareem Al-Rasheed
               </Typography>
               <Typography variant="body2" className="footer-text">
                 Empowering businesses with precise financial planning, expert audit

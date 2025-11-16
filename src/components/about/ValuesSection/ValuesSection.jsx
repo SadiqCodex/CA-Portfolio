@@ -6,6 +6,9 @@ import "aos/dist/aos.css";
 import StarIcon from "@mui/icons-material/Star";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import LightbulbIcon from "@mui/icons-material/Lightbulb";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 
 import "./ValuesSection.scss";
 
@@ -29,6 +32,21 @@ const ValuesSection = () => {
       icon: <FavoriteIcon />,
       title: "Commitment",
       text: "We focus on long-term client partnerships based on trust and consistent support.",
+    },
+    {
+      icon: <LightbulbIcon />,
+      title: "Innovation",
+      text: "We leverage creative solutions and modern technologies to optimize financial strategies.",
+    },
+    {
+      icon: <SupportAgentIcon />,
+      title: "Client Focus",
+      text: "Our clients’ needs are our priority, and we provide personalized advisory at every step.",
+    },
+    {
+      icon: <TrendingUpIcon />,
+      title: "Growth",
+      text: "We help businesses scale sustainably with smart financial planning and tax optimization.",
     },
   ];
 

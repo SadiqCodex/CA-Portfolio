@@ -6,6 +6,9 @@ import "aos/dist/aos.css";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import VerifiedIcon from "@mui/icons-material/Verified";
+import StarIcon from "@mui/icons-material/Star";
+import SchoolIcon from "@mui/icons-material/School";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 
 import "./AwardsSection.scss";
 
@@ -29,6 +32,21 @@ const AwardsSection = () => {
       id: 3,
       icon: <VerifiedIcon fontSize="large" />,
       text: "Member of ICAI",
+    },
+    {
+      id: 4,
+      icon: <StarIcon fontSize="large" />,
+      text: "Best Corporate Tax Advisory Award 2023",
+    },
+    {
+      id: 5,
+      icon: <SchoolIcon fontSize="large" />,
+      text: "Accredited Training Partner for CA Students",
+    },
+    {
+      id: 6,
+      icon: <BusinessCenterIcon fontSize="large" />,
+      text: "Recognized for Excellence in Audit & Assurance",
     },
   ];
 

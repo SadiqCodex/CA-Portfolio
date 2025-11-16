@@ -14,23 +14,24 @@ const TeamSection = () => {
   }, []);
 
   const teamMembers = [
-    {
-      id: 1,
-      name: "CA Rohan Sharma",
-      designation: "Senior Chartered Accountant",
-      specialization:
-        "Corporate Taxation, GST Advisory, Audit & Compliance",
-      icon: <PersonIcon fontSize="large" />,
-    },
-    {
-      id: 2,
-      name: "CA Meera Kapoor",
-      designation: "Chartered Accountant",
-      specialization:
-        "Financial Reporting, Startup Consulting, ITR Filing & Assessments",
-      icon: <PersonIcon fontSize="large" />,
-    },
-  ];
+  {
+    id: 1,
+    name: "CA Ahmed Al-Mansoori (FCA, LLM)",
+    designation: "Partner",
+    specialization:
+      "Ahmed Al-Mansoori is a Senior Chartered Accountant based in Dubai. He specializes in International Taxation, Corporate Structuring, UAE VAT Compliance, and Legal Consultancy. He represents clients before UAE Tax Authorities and advises multinational corporations on cross-border taxation and regulatory compliance.",
+    icon: <PersonIcon fontSize="large" />,
+  },
+  {
+    id: 2,
+    name: "CA Fatima Al-Zahra (FCA, LLB)",
+    designation: "Senior Partner",
+    specialization:
+      "Fatima Al-Zahra is a Senior Chartered Accountant and Legal Advisor in Dubai. She focuses on Audit & Assurance, Financial Advisory, Cross-border Taxation, and Company Law matters. She has represented clients in UAE courts, arbitral tribunals, and provides consultancy to corporates and individuals on complex legal and financial issues.",
+    icon: <PersonIcon fontSize="large" />,
+  },
+];
+
 
   return (
     <section className="team-section">

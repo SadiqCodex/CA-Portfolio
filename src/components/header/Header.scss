@@ -42,6 +42,15 @@
     color: #ffda68 !important;
   }
 }
+.nav-logo {
+      font-size: 1.5rem;
+
+      .highlight {
+        background: linear-gradient(90deg, #3b82f6, #22c55e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
 
 /* =========================
    🔗 NAV LINKS (Desktop)

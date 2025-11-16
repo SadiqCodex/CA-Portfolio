@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import AOS from "aos";
+import Cover from "../../../assets/images/cover.png";   // ✅ Correct Import
 import "aos/dist/aos.css";
 import "./About.scss";
 
 const About = () => {
 
-  // Initialize AOS once
   useEffect(() => {
     AOS.init({
       duration: 900,
@@ -17,12 +17,22 @@ const About = () => {
   }, []);
 
   return (
-    <section className="about-section">
+    <section
+      className="about-section"
+      style={{
+        backgroundImage: `url(${Cover})`,   // ✅ USING IMPORTED IMAGE HERE
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        position: "relative",
+      }}
+    >
+      {/* Dark Overlay */}
+      <div className="about-overlay"></div>
+
       <div className="about-container">
 
-        {/* ------------------------------
-            LEFT CONTENT (Fade + Slide + AOS)
-        --------------------------------*/}
+        {/* LEFT CONTENT */}
         <motion.div
           className="about-content"
           initial={{ opacity: 0, x: -60 }}
@@ -47,9 +57,7 @@ const About = () => {
             data-aos="fade-up"
           >
             We are a professional firm of Chartered Accountants committed to
-            delivering excellence in financial services. With deep expertise in
-            taxation, audit, and business consulting, we help organizations
-            navigate complex financial landscapes with confidence and precision.
+            delivering excellence in financial services...
           </motion.p>
 
           <motion.p
@@ -60,14 +68,11 @@ const About = () => {
             data-aos-delay="200"
           >
             Our team combines traditional accounting principles with modern
-            technology to provide innovative solutions that drive business
-            growth and ensure regulatory compliance.
+            technology to provide innovative solutions...
           </motion.p>
         </motion.div>
 
-        {/* ------------------------------
-            RIGHT VISUAL (3D Rotate + Hover + AOS)
-        --------------------------------*/}
+        {/* RIGHT VISUAL */}
         <motion.div
           className="about-visual"
           initial={{ opacity: 0, scale: 0.6 }}
@@ -82,7 +87,7 @@ const About = () => {
               rotateY: 15,
               rotateX: 10,
               scale: 1.05,
-              transition: { duration: 0.4 }
+              transition: { duration: 0.4 },
             }}
           >
             <motion.div
@@ -91,7 +96,7 @@ const About = () => {
               transition={{
                 repeat: Infinity,
                 duration: 6,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
             >
               📊

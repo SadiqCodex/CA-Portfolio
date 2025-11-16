@@ -1,5 +1,5 @@
 .values-section {
-  padding: 100px 0;
+  padding: 90px 0;
   background: linear-gradient(135deg, #11131f, #1e2130);
   text-align: center;
 
@@ -22,23 +22,34 @@
 
   .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(3, 1fr); // fixed 3 per row
     gap: 35px;
     margin-top: 20px;
+    justify-items: stretch; // make cards take full column width
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .value-card {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(10px);
-    border-radius: 18px;
-    padding: 35px;
-    border: 1px solid rgba(0, 255, 224, 0.25);
-    box-shadow: 0 8px 28px rgba(0, 255, 224, 0.15);
-    transition: 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px); // same as awards
+    border-radius: 16px;
+    padding: 25px 20px;
+    border: 1px solid rgba(0, 255, 224, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 255, 224, 0.08);
+    transition: all 0.3s ease;
+    min-height: 160px; // same vertical height as awards
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; // full column width
 
     &:hover {
-      background: rgba(0, 255, 224, 0.1);
-      box-shadow: 0 12px 32px rgba(0, 255, 224, 0.35);
+      background: rgba(0, 255, 224, 0.12);
+      border-color: rgba(0, 255, 224, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 255, 224, 0.25);
     }
 
     .icon-box {
@@ -69,11 +80,19 @@
       color: #d1d5db;
       font-size: 1.05rem;
       line-height: 1.55;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
   }
 }
 
 /* Responsive */
+@media (max-width: 992px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr); // medium screens: 2 per row
+  }
+}
+
 @media (max-width: 768px) {
   .values-section {
     h2 {
@@ -83,6 +102,11 @@
     .subtitle {
       font-size: 1.1rem;
       margin-bottom: 40px;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr; // mobile: 1 per row
+      gap: 25px;
     }
   }
 }
