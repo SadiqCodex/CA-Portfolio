@@ -1,6 +1,6 @@
 .services-section {
   padding: 100px 0;
-  background: #f8fafc;
+  background: #0a0f1c; // premium dark navy
 
   .services-container {
     max-width: 1200px;
@@ -14,12 +14,12 @@
 
     h2 {
       font-size: 2.5rem;
-      color: #0f172a;
       font-weight: 700;
       margin-bottom: 20px;
+      color: #e2e8ff; // soft premium white-blue
 
       .highlight {
-        background: linear-gradient(90deg, #3b82f6, #22c55e);
+        background: linear-gradient(90deg, #1e90ff, #0ea5e9, #38bdf8);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -27,7 +27,7 @@
 
     p {
       font-size: 1.2rem;
-      color: #64748b;
+      color: #94a3b8;
       max-width: 600px;
       margin: 0 auto;
     }
@@ -40,34 +40,36 @@
   }
 
   .service-card {
-    background: #fff;
+    background: rgba(15, 23, 42, 0.7); // dark blue glass effect
     padding: 40px 30px;
     border-radius: 18px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(148, 163, 184, 0.15);
     text-align: center;
+    backdrop-filter: blur(8px);
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.28);
 
     &:hover {
-      border-color: #3b82f6;
-      box-shadow: 0 12px 45px rgba(59, 130, 246, 0.18);
+      border-color: #38bdf8;
+      box-shadow: 0 12px 45px rgba(56, 189, 248, 0.35);
       transform: translateY(-6px);
     }
 
     .service-icon {
       font-size: 3.2rem;
       margin-bottom: 20px;
+      color: #60a5fa; // glowing blue icon
     }
 
     h3 {
       font-size: 1.4rem;
-      color: #0f172a;
+      color: #f1f5f9;
       margin-bottom: 15px;
       font-weight: 600;
     }
 
     p {
-      color: #64748b;
+      color: #94a3b8;
       line-height: 1.6;
       font-size: 1rem;
     }

@@ -56,7 +56,21 @@ const Header = () => {
   const menuItems = [
     { label: "Home", link: "/", icon: <HomeIcon /> },
     { label: "About", link: "/about", icon: <InfoIcon /> },
-    { label: "Services", link: "/services", icon: <MiscellaneousServicesIcon /> },
+    { 
+      label: "Services", 
+      link: "/services", 
+      icon: <MiscellaneousServicesIcon />,
+      dropdown: [
+        { label: "Audit & Assurance", link: "/services/audit" },
+        { label: "Taxation Services", link: "/services/tax" },
+        { label: "Business Advisory", link: "/services/advisory" },
+        { label: "Compliance Management", link: "/services/compliance" },
+        { label: "GIFT City Services", link: "/services/gift-city" },
+        { label: "Corporate Loan", link: "/services/corporate-loan" },
+        { label: "RBI & FEMA Services", link: "/services/rbi-fema" },
+        { label: "IPO Advisory", link: "/services/ipo-advisory" }
+      ]
+    },
     { label: "Resources", link: "#resources", icon: <LibraryBooksIcon /> },
     { label: "Contact", link: "/contact", icon: <ContactMailIcon /> },
   ];
@@ -101,21 +115,36 @@ const Header = () => {
             data-aos="fade-left"
           >
             {menuItems.map((item) => (
-              <motion.div
-                key={item.label}
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button
-                  component={item.link.startsWith('#') ? 'a' : Link}
-                  to={item.link.startsWith('#') ? undefined : item.link}
-                  href={item.link.startsWith('#') ? item.link : undefined}
-                  startIcon={item.icon}
-                  sx={{ color: "#e2e8f0", mx: 1 }}
+              <div key={item.label} className="nav-item">
+                <motion.div
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  {item.label}
-                </Button>
-              </motion.div>
+                  <Button
+                    component={item.link.startsWith('#') ? 'a' : Link}
+                    to={item.link.startsWith('#') ? undefined : item.link}
+                    href={item.link.startsWith('#') ? item.link : undefined}
+                    startIcon={item.icon}
+                    sx={{ color: "#e2e8f0", mx: 1 }}
+                  >
+                    {item.label}
+                  </Button>
+                </motion.div>
+                
+                {item.dropdown && (
+                  <div className="dropdown-menu">
+                    {item.dropdown.map((dropItem, index) => (
+                      <Link
+                        key={index}
+                        to={dropItem.link}
+                        className="dropdown-item"
+                      >
+                        {dropItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -191,6 +220,31 @@ const Header = () => {
                             <ListItemText primary={item.label} />
                           </ListItemButton>
                         </ListItem>
+                        
+                        {item.dropdown && (
+                          <List sx={{ pl: 4, backgroundColor: 'rgba(244, 197, 66, 0.05)' }}>
+                            {item.dropdown.map((dropItem, dropIndex) => (
+                              <ListItem key={dropIndex} disablePadding>
+                                <ListItemButton
+                                  component={Link}
+                                  to={dropItem.link}
+                                  onClick={toggleDrawer(false)}
+                                  sx={{ py: 1 }}
+                                >
+                                  <ListItemText 
+                                    primary={dropItem.label}
+                                    sx={{ 
+                                      '& .MuiListItemText-primary': {
+                                        fontSize: '14px',
+                                        color: '#cbd5e1'
+                                      }
+                                    }}
+                                  />
+                                </ListItemButton>
+                              </ListItem>
+                            ))}
+                          </List>
+                        )}
                       </motion.div>
                     ))}
                   </List>

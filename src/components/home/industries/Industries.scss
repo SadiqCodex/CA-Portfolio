@@ -1,18 +1,19 @@
 .industries-section {
   padding: 90px 0;
-  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  background: linear-gradient(135deg, #0a0f1c, #111827);
 
   .industries-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 25px;
     text-align: center;
+    overflow: visible; // FIX 1 – hover scale stops cutting
   }
 
   /* Title */
   h2 {
     font-size: 2.8rem;
-    color: #0f172a;
+    color: #e2e8f0;
     font-weight: 700;
     margin-bottom: 55px;
     letter-spacing: -0.5px;
@@ -23,9 +24,10 @@
       display: block;
       width: 90px;
       height: 4px;
-      background: linear-gradient(90deg, #3b82f6, #22c55e);
+      background: linear-gradient(90deg, #1e90ff, #3b82f6, #60a5fa);
       margin: 22px auto 0;
       border-radius: 4px;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
     }
   }
 
@@ -34,41 +36,46 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 35px;
+    overflow: visible; // FIX 2 – hover scale fully visible
   }
 
   /* Card */
   .industry-card {
-    background: rgba(255, 255, 255, 0.72);
-    backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(14px);
     padding: 45px 25px;
     border-radius: 18px;
-    border: 1px solid rgba(226, 232, 240, 0.8);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    box-shadow: 0 8px 25px rgba(30, 64, 175, 0.28);
     transition: all 0.35s ease;
     transform-style: preserve-3d;
     animation: fadeInUp 0.7s ease forwards;
+    position: relative;
+    z-index: 1;
 
     &:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 15px 45px rgba(59, 130, 246, 0.25);
-      border-color: rgba(59, 130, 246, 0.6);
-      background: rgba(255, 255, 255, 0.9);
+      transform: translateY(-14px) scale(1.12); // BIGGER SCALE
+      box-shadow: 0 30px 70px rgba(56, 189, 248, 0.55);
+      border-color: rgba(96, 165, 250, 0.9);
+      background: rgba(15, 23, 42, 0.88);
+      z-index: 10; // stays above other cards
     }
 
     .industry-icon {
       font-size: 3rem;
       margin-bottom: 18px;
       transition: all 0.3s ease;
+      color: #60a5fa;
 
       &:hover {
         transform: scale(1.18) rotate(4deg);
-        filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.45));
+        filter: drop-shadow(0 0 16px rgba(59, 130, 246, 0.55));
       }
     }
 
     h3 {
       font-size: 1.2rem;
-      color: #0f172a;
+      color: #f1f5f9;
       font-weight: 600;
       margin-top: 8px;
     }
@@ -80,7 +87,6 @@
       opacity: 0;
       transform: translateY(35px);
     }
-
     to {
       opacity: 1;
       transform: translateY(0);
