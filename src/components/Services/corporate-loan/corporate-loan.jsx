@@ -1,38 +1,38 @@
 import React from "react";
-import "./secretarial-audit.scss";
+import "./corporate-loan.scss";
 
-export default function SecretarialAudit() {
+export default function CorporateLoan() {
   const serviceDetails = {
-    title: "Secretarial Audit Services",
+    title: "Corporate Loan Advisory Services",
     description:
-      "Our Secretarial Audit ensures that your company complies with corporate laws, governance standards, and regulatory frameworks. We help reduce legal risks and enhance corporate transparency.",
+      "We provide end-to-end corporate loan advisory solutions, ensuring your business secures the right funding at the right time. From credit evaluation to lender negotiations, our expertise drives financial stability and sustainable expansion.",
 
     benefits: [
-      "Ensures compliance with Companies Act & SEBI regulations",
-      "Identifies governance gaps and legal risks",
-      "Strengthens internal corporate processes",
-      "Improves board-level decision making",
-      "Promotes transparency and accountability",
-      "Boosts investor and stakeholder confidence",
+      "Access to tailored corporate financing solutions",
+      "Improved creditworthiness and financial structuring",
+      "Better loan terms through expert negotiations",
+      "Enhanced liquidity and optimized cash flow",
+      "Compliance with banking & regulatory requirements",
+      "Support for expansion, working capital & project financing",
     ],
 
     process: [
-      "Understanding company structure & compliance status",
-      "Review of statutory registers & secretarial records",
-      "Verification of board & shareholder meeting minutes",
-      "Compliance check under Companies Act, SEBI & FEMA",
-      "Assessment of internal governance controls",
-      "Drafting audit observations & risk areas",
-      "Final Secretarial Audit Report (MR-3)",
+      "Initial financial and credit assessment",
+      "Determination of funding requirements",
+      "Preparation of loan documentation & projections",
+      "Identification of suitable banks & financial institutions",
+      "Negotiation of loan terms and interest structure",
+      "Assistance in final approval & disbursement",
+      "Post-loan compliance reporting & monitoring",
     ],
 
     deliverables: [
-      "Secretarial Audit Report (Form MR-3)",
-      "Compliance Risk Assessment Report",
-      "Corporate Governance Review",
-      "Statutory Registers Verification Summary",
-      "ROC & SEBI Compliance Checklist Report",
-      "Board Process Improvement Recommendations",
+      "Comprehensive Loan Requirement Assessment",
+      "Financial Health & Creditworthiness Report",
+      "Lender Shortlisting & Comparison Sheet",
+      "Loan Application & Compliance Documentation",
+      "Negotiated Term Sheet Summary",
+      "Post-Loan Monitoring & Compliance Guide",
     ],
   };
 
@@ -41,7 +41,7 @@ export default function SecretarialAudit() {
       {/* Header */}
       <header className="detailHeader">
         <div className="headerContent">
-          <div className="serviceIcon">📘</div>
+          <div className="serviceIcon">💼</div>
 
           <div className="headerText">
             <h1>{serviceDetails.title}</h1>
@@ -50,19 +50,19 @@ export default function SecretarialAudit() {
         </div>
       </header>
 
-      {/* Content Grid */}
+      {/* Grid */}
       <div className="contentGrid">
         {/* Benefits */}
         <section className="contentSection">
           <div className="sectionHeader">
-            <div className="sectionIcon">✨</div>
+            <div className="sectionIcon">🌟</div>
             <h2>Key Benefits</h2>
           </div>
 
           <div className="benefitsGrid">
             {serviceDetails.benefits.map((item, index) => (
               <div key={index} className="benefitItem">
-                <div className="benefitIcon">✓</div>
+                <div className="benefitIcon">✔</div>
                 <p>{item}</p>
               </div>
             ))}
@@ -91,7 +91,7 @@ export default function SecretarialAudit() {
         {/* Deliverables */}
         <section className="contentSection">
           <div className="sectionHeader">
-            <div className="sectionIcon">📋</div>
+            <div className="sectionIcon">📘</div>
             <h2>Deliverables</h2>
           </div>
 
@@ -109,14 +109,15 @@ export default function SecretarialAudit() {
       {/* CTA */}
       <section className="contactCta">
         <div className="ctaContent">
-          <h2>Ensure Complete Compliance & Corporate Governance</h2>
+          <h2>Fuel Your Business Growth With Smart Financing</h2>
           <p>
-            Get a detailed Secretarial Audit conducted by certified professionals.
+            Get expert advisory support to secure the best corporate funding
+            solutions tailored to your business vision.
           </p>
 
           <div className="ctaActions">
             <button className="primaryBtn">Get Quote</button>
-            <button className="secondaryBtn">Schedule Call</button>
+            <button className="secondaryBtn">Schedule Consultation</button>
           </div>
         </div>
       </section>
