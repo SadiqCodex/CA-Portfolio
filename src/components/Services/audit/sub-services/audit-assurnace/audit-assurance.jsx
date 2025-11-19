@@ -1,5 +1,5 @@
 import React from "react";
-import "./audit-assurance.scss"
+import styles from "./audit-assurance.module.scss";
 
 export default function AuditAssurance() {
   const serviceDetails = {
