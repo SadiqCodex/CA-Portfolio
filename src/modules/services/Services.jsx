@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 
 // MAIN SERVICES
-import Audit from "../../components/Services/audit/audit";
-import Tax from "../../components/Services/tax/tax";
-import BusinessRestructuring from "../../components/Services/business-restructuring/business-restructuring";
-import Compliance from "../../components/Services/compliance/compliance";
-import CorporateLoan from "../../components/Services/corporate-loan/corporate-loan";
+import Audit from "../../components/Services/auditAssurance/audit/audit";
+import Tax from "../../components/Services/auditAssurance/taxServices/tax";
+import BusinessRestructuring from "../../components/Services/auditAssurance/business-restructuring/business-restructuring";
+import Compliance from "../../components/Services/auditAssurance/compliance/compliance";
+import CorporateLoan from "../../components/Services/auditAssurance/corporate-loan/corporate-loan";
 // AUDIT SUB-SERVICES
-import AuditAssurance from "../../components/Services/audit/sub-services/audit-assurnace/audit-assurance";
-import ManagementAudit from "../../components/Services/audit/sub-services/management-audit/management-audit";
-import ProjectFinancing from "../../components/Services/audit/sub-services/project-financing/project-financing";
-import SecretarialAudit from "../../components/Services/audit/sub-services/secretarial-audit/secretarial-audit";
-
+import ManagementAudit from "../../components/Services/auditAssurance/audit/sub-services/management-audit/management-audit";
+import ProjectFinancing from "../../components/Services/auditAssurance/audit/sub-services/project-financing/project-financing";
+import SecretarialAudit from "../../components/Services/auditAssurance/audit/sub-services/secretarial-audit/secretarial-audit";
+import AuditAssurance from "../../components/Services/auditAssurance/audit/sub-services/audit-assurnace/audit-assurance";
 // TAX SUB-SERVICES
-// import DirectTax from "../../components/Services/tax/sub-services/direct-tex/";
-// import GST from "../../components/Services/tax/sub-services/gst/gst";
-// import InternationalTax from "../../components/Services/tax/sub-services/international-tax/international-tax";
-// import TDSCompliance from "../../components/Services/tax/sub-services/tds-compliance/tds-compliance";
-
+import DirectTax from "../../components/Services/auditAssurance/taxServices/sub-services/direct-tex/direct-tax";
+import GST from "../../components/Services/auditAssurance/taxServices/sub-services/gst/gst";
+import InternationalTax from "../../components/Services/auditAssurance/taxServices/sub-services/international-tax/international-tax";
+import TDSCompliance from "../../components/Services/auditAssurance/taxServices/sub-services/tds-compliance/tds-compliance";
 import "./services.scss";
 
 const Services = () => {
@@ -38,9 +36,9 @@ const Services = () => {
       case "gst": return <GST />;
       case "international-tax": return <InternationalTax />;
       case "tds-compliance": return <TDSCompliance />;
-      
+
       // business-restructuring
-      case "business-restructuring": return <BusinessRestructuring/>;
+      case "business-restructuring": return <BusinessRestructuring />;
       // Compliance
       case "compliance": return <Compliance />;
       //corporate loan
@@ -138,14 +136,14 @@ const Services = () => {
               </li>
             </ul>
           )}
-               {/* business-restructuring*/}
+          {/* business-restructuring*/}
           <li
             className={activeService === "business-restructuring" ? "active" : ""}
             onClick={() => setActiveService("business-restructuring")}
           >
             Business-restructuring
           </li>
-                {/* business-restructuring*/}
+          {/* business-restructuring*/}
           <li
             className={activeService === "compliance" ? "active" : ""}
             onClick={() => setActiveService("compliance")}
