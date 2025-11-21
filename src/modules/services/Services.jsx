@@ -1,22 +1,31 @@
 import React, { useState } from "react";
 
 // MAIN SERVICES
-import Audit from "../../components/Services/auditAssurance/audit/audit";
-import Tax from "../../components/Services/auditAssurance/taxServices/tax";
-import BusinessRestructuring from "../../components/Services/auditAssurance/business-restructuring/business-restructuring";
-import Compliance from "../../components/Services/auditAssurance/compliance/compliance";
-import CorporateLoan from "../../components/Services/auditAssurance/corporate-loan/corporate-loan";
+import Advisory from "../../components/Services/advisory/advisory";
+import Audit from "../../components/Services/audit/audit";
+import Tax from "../../components/Services/taxServices/tax";
+import BusinessRestructuring from "../../components/Services/business-restructuring/business-restructuring";
+import Compliance from "../../components/Services/compliance/compliance";
+import CorporateLoan from "../../components/Services/corporate-loan/corporate-loan";
+import FundingAdvisory from "../../components/Services/funding-advisory/funding-advisory";
+import GiftCity from "../../components/Services/gift-city/gift-city";
+import IpoAdvisory from "../../components/Services/ipo-advisory/ipo-advisory";
+import RbiFema from "../../components/Services/rbi-fema/rbi-fema";
+import SubsidyLoan from "../../components/Services/subsidy-loan/subsidy-loan";
+
 // AUDIT SUB-SERVICES
-import ManagementAudit from "../../components/Services/auditAssurance/audit/sub-services/management-audit/management-audit";
-import ProjectFinancing from "../../components/Services/auditAssurance/audit/sub-services/project-financing/project-financing";
-import SecretarialAudit from "../../components/Services/auditAssurance/audit/sub-services/secretarial-audit/secretarial-audit";
-import AuditAssurance from "../../components/Services/auditAssurance/audit/sub-services/audit-assurnace/audit-assurance";
+import ManagementAudit from "../../components/Services/audit/sub-services/management-audit/management-audit";
+import ProjectFinancing from "../../components/Services/audit/sub-services/project-financing/project-financing";
+import SecretarialAudit from "../../components/Services/audit/sub-services/secretarial-audit/secretarial-audit";
+import AuditAssurance from "../../components/Services/audit/sub-services/audit-assurnace/audit-assurance";
+
 // TAX SUB-SERVICES
-import DirectTax from "../../components/Services/auditAssurance/taxServices/sub-services/direct-tex/direct-tax";
-import GST from "../../components/Services/auditAssurance/taxServices/sub-services/gst/gst";
-import InternationalTax from "../../components/Services/auditAssurance/taxServices/sub-services/international-tax/international-tax";
-import TDSCompliance from "../../components/Services/auditAssurance/taxServices/sub-services/tds-compliance/tds-compliance";
+import DirectTax from "../../components/Services/taxServices/sub-services/direct-tex/direct-tax";
+import GST from "../../components/Services/taxServices/sub-services/gst/gst";
+import InternationalTax from "../../components/Services/taxServices/sub-services/international-tax/international-tax";
+import TDSCompliance from "../../components/Services/taxServices/sub-services/tds-compliance/tds-compliance";
 import "./services.scss";
+import { formGroupClasses } from "@mui/material";
 
 const Services = () => {
   const [activeService, setActiveService] = useState("audit");
@@ -43,6 +52,16 @@ const Services = () => {
       case "compliance": return <Compliance />;
       //corporate loan
       case "corporate-loan": return <CorporateLoan />;
+      // funding-advisory
+      case "funding-advisory": return <FundingAdvisory />;
+      //gift-city
+      case "gift-city": return <GiftCity />;
+      //ipo-advisory
+      case "ipo-advisory": return <IpoAdvisory />;
+      //rbi-fema
+      case "rbi-fema": return <RbiFema />;
+      //subsidy-loan
+      case "subsidy-loan": return <SubsidyLoan />;
 
       default: return <Audit />;
     }
@@ -155,6 +174,36 @@ const Services = () => {
             onClick={() => setActiveService("corporate-loan")}
           >
             Corporate-Loan
+          </li>
+          <li
+            className={activeService === "funding-advisory" ? "active" : ""}
+            onClick={() => setActiveService("funding-advisory")}
+          >
+            Funding-Advisory
+          </li>
+          <li
+            className={activeService === "gift-city" ? "active" : ""}
+            onClick={() => setActiveService("gift-city")}
+          >
+            Gift-City
+          </li>
+          <li
+            className={activeService === "ipo-advisory" ? "active" : ""}
+            onClick={() => setActiveService("ipo-advisory")}
+          >
+            Ipo-Advisory
+          </li>
+          <li
+            className={activeService === "rbi-fema" ? "active" : ""}
+            onClick={() => setActiveService("rbi-fema")}
+          >
+            Rbi-Fema
+          </li>
+          <li
+            className={activeService === "subsidy-loan" ? "active" : ""}
+            onClick={() => setActiveService("subsidy-loan")}
+          >
+            Subsidy-Loan
           </li>
         </ul>
       </aside>

@@ -15,7 +15,7 @@ const subServices = [
   },
   {
     id: "project-financing",
-    title: "Project Financing",
+    title: "Project-Financing",
     description:
       "Expert project financing solutions and feasibility studies for business expansion.",
     route: "project-financing",
