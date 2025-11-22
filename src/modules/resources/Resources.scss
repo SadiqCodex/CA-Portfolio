@@ -1,0 +1,12 @@
+.resources {
+  width: 100%;
+  overflow-x: hidden;
+  
+  section {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,105 @@
+.faq-section {
+  padding: 80px 20px;
+  background: #0c0f17; // deep premium dark
+  text-align: center;
+
+  .section-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(0, 230, 255, 0.18);
+     span {
+        color: #00eaff; // neon aqua accent
+        text-shadow: 0 0 10px rgba(0, 234, 255, 0.4);
+      }
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: #b9b9b9;
+    margin-bottom: 40px;
+  }
+
+  .faq-container {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .faq-card {
+    background: #151922;
+    border-radius: 16px;
+    padding: 20px 26px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    cursor: pointer;
+    transition: 0.35s ease;
+    overflow: hidden;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.45);
+
+    &:hover {
+      border-color: rgba(0, 234, 255, 0.3);
+      box-shadow: 
+        0 0 18px rgba(0, 234, 255, 0.18),
+        0px 14px 40px rgba(0, 0, 0, 0.55);
+    }
+
+    .faq-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h3 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin: 0;
+      }
+
+      .icon {
+        transition: 0.35s;
+        color: #00eaff;
+        font-size: 1.4rem;
+        filter: drop-shadow(0 0 6px rgba(0, 234, 255, 0.4));
+      }
+    }
+
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.35s ease;
+
+      p {
+        margin-top: 14px;
+        color: #d4d4d4;
+        line-height: 1.6;
+        font-size: 0.97rem;
+      }
+    }
+
+    &.active {
+      .faq-body {
+        max-height: 200px;
+        opacity: 1;
+      }
+
+      .icon {
+        transform: rotate(180deg);
+        color: #5bf1ff;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 60px 15px;
+
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.tools-section {
+  padding: 90px 0;
+  background: linear-gradient(135deg, #0a0f1a, #111827, #0d1628); // same theme
+
+  .container {
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    h2 {
+      font-size: 40px;
+      font-weight: 800;
+      color: #f3f4f6;
+      text-shadow: 0 0 10px rgba(0, 234, 255, 0.18);
+
+      span {
+        color: #00eaff; // neon aqua
+        text-shadow: 0 0 10px rgba(0, 234, 255, 0.4);
+      }
+    }
+
+    p {
+      font-size: 18px;
+      color: #9ca3af;
+      margin-top: 10px;
+    }
+  }
+
+  .tools-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .tool-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 35px 28px;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55);
+    transition: 0.35s ease;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0, 234, 255, 0.35); // same aqua glow
+      box-shadow:
+        0 0 18px rgba(0, 234, 255, 0.25),
+        0px 14px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .icon {
+      width: 72px;
+      height: 72px;
+      background: rgba(0, 234, 255, 0.15); // aqua bg
+      color: #00eaff;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      font-size: 32px;
+      box-shadow: inset 0 0 14px rgba(0, 234, 255, 0.45);
+    }
+
+    h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #f9fafb;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #d1d5db;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .cta-btn {
+      background: linear-gradient(90deg, #00eaff, #19b9ff); // aqua gradient
+      color: #0b1120;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.3s ease;
+      font-size: 15px;
+      box-shadow: 0 4px 18px rgba(0, 234, 255, 0.4);
+
+      &:hover {
+        background: linear-gradient(90deg, #5bf1ff, #2dd4ff);
+        box-shadow: 0 6px 22px rgba(0, 234, 255, 0.55);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tools-section {
+    padding: 70px 15px;
+
+    .section-header h2 {
+      font-size: 30px;
+    }
+  }
+}

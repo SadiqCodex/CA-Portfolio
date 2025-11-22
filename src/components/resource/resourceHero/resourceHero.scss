@@ -1,0 +1,134 @@
+.resource-hero {
+  position: relative;
+  padding: 140px 20px;
+  background: radial-gradient(circle at top, #103350, #071e2e 60%, #03131e);
+  color: white;
+  text-align: center;
+  border-radius: 0 0 40px 40px;
+  overflow: hidden;
+  isolation: isolate;
+
+  // Floating particles
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(0, 238, 255, 0.18), transparent 70%);
+    filter: blur(70px);
+    z-index: 0;
+  }
+
+  &::before {
+    top: -40px;
+    left: -80px;
+  }
+
+  &::after {
+    bottom: -60px;
+    right: -80px;
+  }
+
+  .resource-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: url("/assets/bg-pattern.png");
+    opacity: 0.06;
+    z-index: 1;
+  }
+
+  .resource-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .title {
+    font-size: 3.4rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: #eaf8ff;
+
+    // Neon accent
+    span {
+      color: #00eaff;
+      text-shadow: 0 0 16px rgba(0, 234, 255, 0.5);
+    }
+
+    // Premium underline
+    &::after {
+      content: "";
+      display: block;
+      width: 110px;
+      height: 4px;
+      margin: 14px auto 0;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #00eaff, #00b8ff, #008cff);
+      box-shadow: 0 0 12px rgba(0, 238, 255, 0.4);
+    }
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    max-width: 720px;
+    margin: auto;
+    opacity: 0.88;
+    line-height: 1.7;
+    color: #d6e9f3;
+  }
+
+  .hero-buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+
+    .btn {
+      padding: 14px 32px;
+      border-radius: 40px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .primary {
+      background: linear-gradient(135deg, #00bfff, #008cff);
+      color: white;
+      box-shadow: 0 0 12px rgba(0, 174, 255, 0.4);
+
+      &:hover {
+        background: linear-gradient(135deg, #00a5e0, #0077c7);
+        box-shadow: 0 0 16px rgba(0, 174, 255, 0.6);
+      }
+    }
+
+    .secondary {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #eaf8ff;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.22);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .resource-hero {
+    padding: 110px 15px;
+
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+    }
+  }
+}

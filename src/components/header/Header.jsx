@@ -71,7 +71,7 @@ const Header = () => {
         { label: "IPO Advisory", link: "/services/ipo-advisory" }
       ]
     },
-    { label: "Resources", link: "#resources", icon: <LibraryBooksIcon /> },
+    { label: "Resources", link: "/resources", icon: <LibraryBooksIcon /> },
     { label: "Contact", link: "/contact", icon: <ContactMailIcon /> },
   ];
 
